@@ -175,6 +175,8 @@ func (p *Plugin) CreateEndpoint(ctx context.Context, r CreateEndpointRequest) (C
 		}
 
 		hostLink.PeerHardwareAddr = addr
+	}else {
+		//TODO: calc mac address according to contaner uid
 	}
 
 	if err := netlink.LinkAdd(hostLink); err != nil {
